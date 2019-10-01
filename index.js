@@ -176,7 +176,7 @@ server.put("/api/users/:id", (request, response) => {
 	const id = request.params.id; // params is an object with all the url parameters
 	const changes = request.body;
 
-	if (!changes.name || !changes.bio) {
+	if (!changes) {
 		response.status(400).json({ errorMessage: 'Please provide name or bio for the user.' });
 	} else {
 	userData
